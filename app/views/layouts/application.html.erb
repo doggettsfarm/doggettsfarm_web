@@ -9,7 +9,11 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
 
-  <body>
+  <body class="govuk-width-container">
+    <%= render partial: "shared/nav" %>
     <%= yield %>
+    <footer class="govuk-footer app-footer">
+      <p class="govuk-body">&copy; D. W. Squier Ltd</p>
+    </footer>
   </body>
 </html>

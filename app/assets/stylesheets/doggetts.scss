@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+$govuk-global-styles: true;
+$govuk-include-default-font-face: false;
+@import "govuk-frontend/govuk/all";
+
+.app-header {
+  background-color: govuk-colour("green");
+}
+
+.app-header__container {
+  border-bottom: govuk-spacing(2) solid govuk-colour("light-green");
+}
+
+.app-header__navigation-item--active {
+  a.app-header__link {
+    &:link,
+    &:hover,
+    &:visited {
+      color: govuk-colour("mid-grey");
+    }
+
+    // When focussed, the text colour needs to be darker to ensure that colour
+    // contrast is still acceptable
+    &:focus {
+      color: $govuk-focus-text-colour;
+    }
+  }
+}
+
+.app-header__content {
+  @include govuk-media-query ($from: desktop) {
+    width: 66.66%;
+    padding-left: $govuk-gutter-half;
+    float: right;
+  }
+}
+
+.app-home__link {
+  @include govuk-media-query ($from: desktop) {
+    padding-left: $govuk-gutter-half;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin-bottom: govuk-spacing(2)
+}
+
+.app-footer {
+  background-color: govuk-colour("green");
+
+  .govuk-body {
+    padding-left: $govuk-gutter-half;
+    color: govuk-colour("white")
+  }
+}
+
+.google-maps {
+  position: relative;
+  padding-bottom: 75%; // This is the aspect ratio
+  height: 0;
+  overflow: hidden;
+  margin-bottom: $govuk-gutter;
+}
+.google-maps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}

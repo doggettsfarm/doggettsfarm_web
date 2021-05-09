@@ -1,0 +1,100 @@
+<main class="govuk-main-wrapper">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Doggetts Farm</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">The Doggetts Pod (pop-up cafe) is open from 10 - 4 on Sundays.</p>
+
+    <p class="govuk-body"><a href="/pod">Find out more about the Pod here</a> or visit our <a href="https://www.facebook.com/Doggettsfarm/">our Facebook page</a> for last minute updates (particularly if the weather's looking dodgy.</p>
+
+    <p class="govuk-body">We also have <a href="/logs-for-sale">logs for sale</a>.</p>
+
+    <h2 class="govuk-heading-l" id="coronavirus-update">Coronavirus update</h2>
+
+    <p class="govuk-body">We understand that the footpath along Doggetts Chase is really important to a lot of people in Rochford keeping mentally and physically fit, especially when we’re socially distancing.</p>
+
+    <p class="govuk-body">Please help keep everyone healthy by making sure that you:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>keep 2 metres away from others - especially those working</li>
+      <li>don’t gather in groups</li>
+      <li>keep to the road or on the verge</li>
+      <li>pick up your litter and dog mess as usual</li>
+    </ul>
+
+    <p class="govuk-body">Keep each other safe and well by <a href="https://www.gov.uk/coronavirus">following the government guidance</a>.</p>
+
+    <h2 class="govuk-heading-l" id="visiting-the-farm">Visiting the farm</h2>
+
+    <p class="govuk-body">We work hard to keep our countryside beautiful, and would appreciate your help too.</p>
+
+    <p><%= image_tag "combine/combine-3x2-min.jpg", alt: "a yellow combine finishing harvesting a golden field of wheat in the sunshine" %></p>
+
+    <p class="govuk-body">A footpath runs down the length of <a href="https://goo.gl/maps/uPhC6CQuBXt6qDrZ8">Doggetts Chase</a>. Please be careful when walking down the road as it is in constant use by farm machinery.</p>
+
+    <p class="govuk-body">Follow <a href="https://en.wikipedia.org/wiki/The_Country_Code">the Countryside Code</a>:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>keep <a href="https://ww2.rspb.org.uk/birds-and-wildlife/bird-and-wildlife-guides/ask-an-expert/previous/dog_disturbs_bird.aspx">dogs under close control</a></li>
+      <li><a href="https://www.rspca.org.uk/adviceandwelfare/litter">pick up after yourselves</a></li>
+      <li>keep to the footpath</li>
+    </ul>
+
+    <p><%= image_tag "alpacas-min.jpg", alt: "Four alpacas having a breakfast of feed and carrots, with a fifth keeping watch like a meerkat" %></p>
+
+    <p class="govuk-body">Make sure you say hello to the horses and alpacas on the way through. Some of them are getting on a little bit now and are on special diets to keep them fit and well. Please do your part by not giving them treats - vet bills are expensive!</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <%= render partial: "shared/address_side" %>
+  </div>
+</div>
+</main>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "image": [
+      "https://www.doggettsfarm.com/assets/combine/combine-1x1.jpg",
+      "https://www.doggettsfarm.com/assets/combine/combine-4x3.jpg",
+      "https://www.doggettsfarm.com/assets/combine/combine-16x9.jpg"
+      ],
+    "@id": "https://www.doggettsfarm.com/",
+    "name": "{{ page.title }}",
+    "description": "{{ site.description || page.description }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Doggetts, Doggetts Chase",
+      "addressLocality": "Rochford",
+      "addressRegion": "Essex",
+      "postalCode": "SS4 3RN",
+      "addressCountry": "UK"
+    },
+    "email": "info@doggettsfarm.com",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.595676,
+      "longitude": 0.7137753
+    },
+    "url": "https://www.doggettsfarm.com/",
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    ]
+  }
+</script>
