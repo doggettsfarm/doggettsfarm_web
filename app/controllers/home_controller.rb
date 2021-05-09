@@ -11,7 +11,9 @@ class HomeController < ApplicationController
 
   def slug
     slug = params["slug"]
-    render slug.underscore if ROUTES.include?(slug)
+    if ROUTES.include?(slug)
+      render slug.underscore and return
+    end
     redirect_to "/"
   end
 end

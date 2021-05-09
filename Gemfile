@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-File.read(".ruby-version").strip
+ruby File.read(".ruby-version")
 
 gem 'puma'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
