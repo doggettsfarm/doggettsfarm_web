@@ -7,13 +7,16 @@ RUN apt-get update \
 
 RUN mkdir -p /usr/src/app
 
+
 WORKDIR /usr/src/app
 
 COPY Gemfile* ./
 COPY .ruby-version ./
+
+ENV BUNDLE_PATH /gems
+
 RUN bundle install
 
 COPY . .
 
-EXPOSE 3000
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
