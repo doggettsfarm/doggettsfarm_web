@@ -1,21 +1,32 @@
 FROM ruby:2.7
 
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     nodejs \
+    yarn \
     && rm -rf /var/lib/apt/lists/*
+
+RUN yarn config set cache-folder /root/.yarn/
 
 RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
 COPY Gemfile* ./
+COPY .ruby-version ./
 
 RUN bundle config --global frozen 1
 RUN bundle install --without development test
 
 COPY . .
 
-RUN bundle exec rake assets:precompile
+ENV RAILS_ENV production
+ENV YARN_ENV production
+RUN yarn install
+RUN bin/rails assets:precompile
 
 CMD ["bin/rails", "server", "-b", "0.0.0.0"]
